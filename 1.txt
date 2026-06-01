@@ -31,3 +31,19 @@ git add .
 git commit -m "Deleted data.txt"
 git push
 So the issue is not your account. Git is protecting repository history.
+After typing 'git status'
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    1.txt
+        deleted:    sample.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        2.txt
+        Cloning-/
+
+no changes added to commit (use "git add" and/or "git commit -a")
