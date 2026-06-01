@@ -1,0 +1,33 @@
+Cloning is normally possible
+You can clone your own repository:
+git clone https://github.com/username/demo.git
+Git creates a copy of the remote repository on your computer.
+-->
+When cloning fails
+Example:
+git clone https://github.com/username/wrongrepo.git
+Output:
+(Repository not found)
+*Reasons
+Repository does not exist
+Repository is private and you lack permission
+Wrong URL
+Authentication issue
+Deletion Error Example
+-->
+Suppose repository contains:
+project/
+ ├─ app.py
+ └─ data.txt
+Delete data.txt locally:
+*rm data.txt
+-->Git shows:
+git status
+Output:
+deleted: data.txt
+Git reports an error-like state because the local repository differs from the last commit.
+To record deletion:
+git add .
+git commit -m "Deleted data.txt"
+git push
+So the issue is not your account. Git is protecting repository history.
