@@ -1,0 +1,35 @@
+Prove commits enter a branch without push
+Step 1: Create branch
+Check current branch:
+git branch
+Create new branch:
+git checkout -b feature
+Expected:
+Switched to a new branch 'feature'
+
+Step 2: Create file
+echo "Branch Test" > branch.txt
+
+Step 3: Commit
+git add .
+git commit -m "Added branch file"
+
+Step 4: Verify commit
+git log --oneline
+Expected:
+a1b2c3 Added branch file
+
+Step 5: Check GitHub
+Do NOT push.
+git status
+
+Output:
+Your branch is ahead of origin/feature by 1 commit
+Proof
+Commit already exists locally.
+GitHub does not yet know about it.
+
+Therefore:
+Commit → Branch
+Push → GitHub
+A commit belongs to the current branch immediately after git commit.

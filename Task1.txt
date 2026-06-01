@@ -1,0 +1,59 @@
+Prove why cloning may fail and why deletion appears as an error
+Part A: Successful Clone
+Copy a repository URL and run:
+git clone <repository-url>
+Example:
+git clone https://github.com/yourusername/git-demo.git
+Expected:
+Cloning into 'git-demo'...
+Repository downloads successfully.
+
+Part B: Failed Clone
+Try a non-existent repository:
+git clone https://github.com/yourusername/abcxyz123.git
+Expected:
+Repository not found
+fatal: repository does not exist
+
+Proof that,
+Cloning is possible only when:
+Repository exists
+You have permission
+URL is correct
+
+Part C: Deletion "Error"
+Inside the cloned repository:
+Create a file,
+echo Hello > demo.txt
+
+Commit it:
+git add .
+git commit -m "Added demo file"
+
+Delete it:
+rm demo.txt
+
+Check status:
+git status:
+PS C:\Users\SHIVADITYA SINGH\New folder\HTML> git status
+interactive rebase in progress; onto 6bd0702
+Last command done (1 command done):
+   pick 14bd093 # Deleted data.txt
+No commands remaining.
+You are currently editing a commit while rebasing branch 'main' on '6bd0702'.
+  (use "git commit --amend" to amend the current commit)
+  (use "git rebase --continue" once you are satisfied with your changes)
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        deleted:    demo.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+OUTPUT:
+deleted: demo.txt
+
+PROOF:
+Git detects deletion because the file existed in the previous commit.
+This is not a GitHub account error.
+Git is showing a tracked file was removed.

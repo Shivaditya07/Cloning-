@@ -1,0 +1,26 @@
+Prove multiple repositories can be cloned
+-->
+Clone repository 1:
+git clone <repo1-url>
+Clone repository 2:
+git clone <repo2-url>
+Clone repository 3:
+git clone <repo3-url>
+
+Check folders:
+ls
+
+Expected:
+repo1
+repo2
+repo3
+Proof
+
+Each repository has its own:
+.git
+branches
+commits
+history
+
+Therefore:
+ Multiple repositories can be cloned on the same computer.

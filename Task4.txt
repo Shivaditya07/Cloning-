@@ -1,0 +1,46 @@
+Prove file must pass through temporary storage (Staging Area)
+Step 1: Create file
+echo "Testing staging area" > stage.txt
+
+Step 2: Check status
+git status
+Expected:
+Untracked files:
+stage.txt
+
+Step 3: Try committing directly
+git commit -m "Testing"
+Expected:
+nothing added to commit
+Commit fails.
+
+Step 4: Add to staging area
+git add stage.txt
+
+Step 5: Verify staging
+git status
+Expected:
+Changes to be committed:
+stage.txt
+
+Step 6: Commit
+git commit -m "Added stage file"
+Expected:
+1 file changed
+Proof
+
+Git workflow:
+Working Directory
+       ↓
+git add
+       ↓
+Staging Area
+       ↓
+git commit
+       ↓
+Local Repository
+       ↓
+git push
+       ↓
+GitHub
+Without git add, Git cannot include the file in a commit.
